@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tf443(+ooi+(rm%wvv&pi1dfyhp769_lt*l#0li)%5kvqpeh5i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "orlando-devito-mentalhealthtracker4.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id"]
 
 # Application definition
 
@@ -121,4 +121,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://orlando-devito-mentalhealthtracker4.pbp.cs.ui.ac.id", "https://orlando-devito-mentalhealthtracker4.pbp.cs.ui.ac.id"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id", "https://orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id"]
