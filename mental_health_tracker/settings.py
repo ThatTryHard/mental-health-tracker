@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-tf443(+ooi+(rm%wvv&pi1dfyhp769_lt*l#0li)%5kvqpeh5i
 PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = not PRODUCTION
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id", "10.0.2.2"]
 
 # Application definition
 
@@ -38,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'authetication',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,9 +51,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mental_health_tracker.urls'
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
 
 TEMPLATES = [
     {
@@ -129,4 +138,4 @@ else:
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id", "https://orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost","http://127.0.0.1","http://orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id", "https://orlando-devito-mentalhealthtracker.pbp.cs.ui.ac.id", "http://10.0.2.2"]
